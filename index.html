@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Przekierowanie...</title>
+  <script>
+    // Pobierz ID z adresu URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('ID');
+
+    // Jeśli ID istnieje, przekieruj do API
+    if (id) {
+      const targetUrl = `https://mojeapi.com/api?ID=${encodeURIComponent(id)}`;
+      window.location.href = targetUrl;
+    } else {
+      document.write("<p>Błąd: brak parametru ID w adresie URL.</p>");
+    }
+  </script>
+</head>
+<body>
+  <p>Przekierowywanie...</p>
+</body>
+</html>
